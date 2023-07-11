@@ -28,3 +28,5 @@ end, 10000)
 vim.api.nvim_set_keymap("v", "p", '"0p', { noremap = true })
 vim.api.nvim_set_keymap("n", "<space>ge", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true })
 vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
+
+-- vim.o.tabstop = 4
