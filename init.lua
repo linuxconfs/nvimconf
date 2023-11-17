@@ -29,11 +29,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 vim.api.nvim_set_keymap("v", "p", '"0p', { noremap = true })
 vim.api.nvim_set_keymap('x', 'q', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<space>ge", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<space>db", "<cmd>DBUI<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gf", "<cmd>GoFillStruct<CR>", { noremap = true })
+vim.api.nvim_set_keymap("x", "<leader>gl", ":Gllog<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<space>ge", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<space>db", "<cmd>DBUI<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gf", "<cmd>GoFillStruct<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<c-a>", "<c-o>^", { noremap = true })
 vim.api.nvim_set_keymap("i", "<c-e>", "<c-o>$", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log --graph --oneline<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
 -- vim.o.tabstop = 4
