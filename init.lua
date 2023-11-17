@@ -27,6 +27,7 @@ end, 10000)
 
 vim.api.nvim_set_keymap("v", "p", '"0p', { noremap = true })
 vim.api.nvim_set_keymap("n", "<space>ge", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>db", "<cmd>DBUI<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gf", "<cmd>GoFillStruct<CR>", { noremap = true })
 vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
