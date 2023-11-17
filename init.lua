@@ -37,7 +37,7 @@ vim.api.nvim_set_keymap("i", "<c-a>", "<c-o>^", { noremap = true })
 vim.api.nvim_set_keymap("i", "<c-e>", "<c-o>$", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log --graph --oneline<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
+-- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
 -- vim.o.tabstop = 4
 vim.api.nvim_exec([[
