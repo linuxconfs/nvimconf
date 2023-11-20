@@ -33,6 +33,7 @@ vim.api.nvim_set_keymap("x", "<leader>gl", ":Gllog<CR>", { noremap = true, silen
 vim.api.nvim_set_keymap("n", "<space>ge", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<space>db", "<cmd>DBUI<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gf", "<cmd>GoFillStruct<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "g<S-r>", "<cmd>GoGenReturn<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<c-a>", "<c-o>^", { noremap = true })
 vim.api.nvim_set_keymap("i", "<c-e>", "<c-o>$", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
