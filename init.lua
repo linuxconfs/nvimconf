@@ -36,6 +36,7 @@ vim.api.nvim_set_keymap("n", "gf", "<cmd>GoFillStruct<CR>", { noremap = true, si
 vim.api.nvim_set_keymap("n", "g<S-r>", "<cmd>GoGenReturn<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<c-a>", "<c-o>^", { noremap = true })
 vim.api.nvim_set_keymap("i", "<c-e>", "<c-o>$", { noremap = true })
+vim.api.nvim_set_keymap("i", "<c-j>", "<c-o>o", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log --graph --oneline<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
