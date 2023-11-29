@@ -1,6 +1,7 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 require('mini.surround').setup()
+require('dbee').setup()
 
 --require("nvim-treesitter.configs").setup({
 --  ensure_installed = "all",
