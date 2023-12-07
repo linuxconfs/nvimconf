@@ -1,7 +1,8 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 require('mini.surround').setup()
-require('dbee').setup()
+require('mini.files').setup()
+-- require('dbee').setup()
 
 --require("nvim-treesitter.configs").setup({
 --  ensure_installed = "all",
@@ -40,10 +41,21 @@ vim.api.nvim_set_keymap("i", "<c-e>", "<c-o>$", { noremap = true })
 vim.api.nvim_set_keymap("i", "<c-j>", "<c-o>o", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log --graph --oneline<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>mf", ":lua MiniFiles.open()<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
+-- some useful keymaps: 
+-- cina: edit next text obj
+-- vafaf: expand text block
+
+-- DBUI
+-- local keymap = vim.keymap
+-- keymap.set('n', '<localleader>R', ':normal vip<CR><PLUG>(DBUI_ExecuteQuery)', { buffer = true })
+-- keymap.set('n', '<leader>F', ':%!sql-formatter-cli .<CR>', { buffer = true })
+-- keymap.set('n', '<leader>f', ':normal vip<CR>:!sql-formatter-cli<CR>', { buffer = true })
+
 -- vim.o.tabstop = 4
+--  autocmd FileType * nmap s <Plug>(your-minisurround-mapping)
 vim.api.nvim_exec([[
   autocmd FileType php setlocal tabstop=4 shiftwidth=4 expandtab
-  autocmd FileType * nmap s <Plug>(your-minisurround-mapping)
 ]], false)
