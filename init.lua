@@ -2,6 +2,7 @@
 require("config.lazy")
 require('mini.surround').setup()
 require('mini.files').setup()
+-- require('mini.animate').setup()
 -- require('dbee').setup()
 
 --require("nvim-treesitter.configs").setup({
@@ -45,7 +46,8 @@ vim.api.nvim_set_keymap("n", "<leader>mf", ":lua MiniFiles.open()<CR>", { norema
 -- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
 -- some useful keymaps: 
--- cina: edit next text obj
+-- cina: edit next text obj, can use dot to repeat
+-- cia: edit text obj (argument)
 -- vafaf: expand text block
 
 -- DBUI
