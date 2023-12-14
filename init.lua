@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 --   vim.api.nvim_set_hl(0, "TSVariable", { link = "Normal" })
 -- end, 10000)
 
+
 vim.api.nvim_set_keymap("v", "p", '"0p', { noremap = true })
 vim.api.nvim_set_keymap('x', 'q', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "<leader>gl", ":Gllog<CR>", { noremap = true, silent = true })
@@ -42,7 +43,6 @@ vim.api.nvim_set_keymap("i", "<c-e>", "<c-o>$", { noremap = true })
 vim.api.nvim_set_keymap("i", "<c-j>", "<c-o>o", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log --graph --oneline<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>mf", ":lua MiniFiles.open()<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
 -- some useful keymaps: 

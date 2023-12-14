@@ -2,7 +2,7 @@ return {
  {
   keys = {
    {
-    "<Leader>l",
+    "<Leader>e",
     ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>:lua MiniFiles.reveal_cwd()<CR>",
     desc = "smart location",
    },
