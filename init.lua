@@ -43,6 +43,7 @@ vim.api.nvim_set_keymap("i", "<c-e>", "<c-o>$", { noremap = true })
 vim.api.nvim_set_keymap("i", "<c-j>", "<c-o>o", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log --graph --oneline<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gp", "`[v`]", { noremap = true, silent = true })
 -- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
 -- some useful keymaps: 
@@ -51,8 +52,8 @@ vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log --graph --oneline<CR>", { n
 -- vafaf: expand text block
 
 -- DBUI
--- local keymap = vim.keymap
--- keymap.set('n', '<localleader>R', ':normal vip<CR><PLUG>(DBUI_ExecuteQuery)', { buffer = true })
+local keymap = vim.keymap
+keymap.set('n', '<localleader>S', ':normal vip<CR><PLUG>(DBUI_ExecuteQuery)', { buffer = true })
 -- keymap.set('n', '<leader>F', ':%!sql-formatter-cli .<CR>', { buffer = true })
 -- keymap.set('n', '<leader>f', ':normal vip<CR>:!sql-formatter-cli<CR>', { buffer = true })
 
