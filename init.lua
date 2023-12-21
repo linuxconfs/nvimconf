@@ -51,6 +51,7 @@ vim.cmd([[
   highlight LineHighlight ctermbg=lightyellow guibg=lightyellow
   nnoremap <silent> <Leader>1 :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
   nnoremap <silent> <Leader>0 :call clearmatches()<CR>
+  map <leader>p :let @*=fnamemodify(expand("%"), ":~:.") . ":" . line(".")<CR>
 ]])
 
 -- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
