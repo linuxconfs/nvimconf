@@ -45,6 +45,14 @@ vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, s
 vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log --graph --oneline<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gp", "`[v`]", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>m", ":MaximizerToggle<CR>", { noremap = true, silent = true })
+
+-- for line highlight related
+vim.cmd([[
+  highlight LineHighlight ctermbg=lightyellow guibg=lightyellow
+  nnoremap <silent> <Leader>1 :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
+  nnoremap <silent> <Leader>0 :call clearmatches()<CR>
+]])
+
 -- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
 -- some useful keymaps: 
