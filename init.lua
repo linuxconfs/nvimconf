@@ -47,6 +47,7 @@ vim.api.nvim_set_keymap("n", "gp", "`[v`]", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>m", ":MaximizerToggle<CR>", { noremap = true, silent = true })
 
 -- for line highlight related
+-- leader p copy filepath to register
 vim.cmd([[
   highlight LineHighlight ctermbg=lightyellow guibg=lightyellow
   nnoremap <silent> <Leader>1 :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
@@ -70,5 +71,5 @@ keymap.set('n', '<localleader>S', ':normal vip<CR><PLUG>(DBUI_ExecuteQuery)', { 
 -- vim.o.tabstop = 4
 --  autocmd FileType * nmap s <Plug>(your-minisurround-mapping)
 vim.api.nvim_exec([[
-  autocmd FileType php setlocal tabstop=4 shiftwidth=4 expandtab
+  autocmd FileType php setlocal tabstop=2 shiftwidth=2 expandtab
 ]], false)
