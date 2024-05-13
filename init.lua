@@ -50,6 +50,7 @@ vim.api.nvim_set_keymap("n", "<leader>ss", ":SearchSession<CR>", { noremap = tru
 -- for line highlight related
 -- leader p copy filepath to register
 vim.cmd([[
+  let g:vim_markdown_folding_disabled = 1
   highlight LineHighlight ctermbg=lightyellow guibg=lightyellow
   nnoremap <silent> <Leader>1 :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
   nnoremap <silent> <Leader>0 :call clearmatches()<CR>
