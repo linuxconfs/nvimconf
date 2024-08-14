@@ -1,1 +1,12 @@
-{"version":6,"extras":[],"hashes":{"\/home\/zhangddjs\/.local\/share\/nvim\/lazy\/LazyVim\/NEWS.md":"2035"},"news":{"NEWS.md":"6520"}}
+{
+  "extras": [
+
+  ],
+  "hashes": {
+    "/home/zhangddjs/.local/share/nvim/lazy/LazyVim/NEWS.md": "2035"
+  },
+  "news": {
+    "NEWS.md": "6520"
+  },
+  "version": 6
+}
