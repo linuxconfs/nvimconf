@@ -30,6 +30,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 --   vim.api.nvim_set_hl(0, "TSVariable", { link = "Normal" })
 -- end, 10000)
 
+-- yank to osc52
+-- NOTE: neovim before 0.10, if abouve then obsolete
+function copy()
+  -- if vim.v.event.operator == 'y' and vim.v.event.regname == '+' then
+  require('osc52').copy_register('0')
+  -- end
+end
+vim.api.nvim_create_autocmd('TextYankPost', {callback = copy})
 
 vim.api.nvim_set_keymap("v", "p", '"0p', { noremap = true })
 vim.api.nvim_set_keymap('x', 'q', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true, silent = true })
