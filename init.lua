@@ -92,3 +92,10 @@ keymap.set('n', '<localleader>S', ':normal vip<CR><PLUG>(DBUI_ExecuteQuery)', { 
 vim.api.nvim_exec([[
   autocmd FileType php setlocal tabstop=2 shiftwidth=2 noexpandtab autoindent
 ]], false)
+
+-- solve https://github.com/neovim/neovim/issues/21856
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+  callback = function()
+    vim.fn.jobstart('notify-send "hello"', {detach=true})
+  end,
+})
