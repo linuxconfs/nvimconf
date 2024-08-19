@@ -5,12 +5,16 @@ require('mini.files').setup()
 -- require('mini.animate').setup()
 -- require('dbee').setup()
 
---require("nvim-treesitter.configs").setup({
---  ensure_installed = "all",
---  highlight = {
---    enable = true,
---  },
---})
+-- for golang highlight
+require("nvim-treesitter.configs").setup({
+ -- ensure_installed = "all",
+ ensure_installed = {
+   "go",
+ },
+ highlight = {
+   enable = true,
+ },
+})
 
 -- vim.cmd.colorscheme("darcula")
 -- vim.cmd.colorscheme("dracula")
@@ -29,6 +33,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- vim.defer_fn(function()
 --   vim.api.nvim_set_hl(0, "TSVariable", { link = "Normal" })
 -- end, 10000)
+
+-- gopls setup for rpi
+local lspconfig = require("lspconfig")
+lspconfig.gopls.setup({})
 
 -- yank to osc52
 -- NOTE: neovim before 0.10, if abouve then obsolete
