@@ -57,6 +57,14 @@ vim.cmd([[
   map <leader>p :let @*=fnamemodify(expand("%"), ":~:.") . ":" . line(".")<CR>
 ]])
 
+
+-- treesitter switch argument
+vim.api.nvim_set_keymap("i", "<tab><tab>", '<ESC>:normal ]avia<c-g><CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<tab><tab>", ':normal ]avia<c-g><CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("s", "<tab><tab>", '<ESC>:normal ]avia<c-g><CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<tab><tab>", ':normal ]avia<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<tab><tab>", ':normal ]avia<CR>', { noremap = true, silent = true })
+
 -- vim.api.nvim_set_hl(0, "@comment", { fg = "green" })
 
 -- some useful keymaps: 
