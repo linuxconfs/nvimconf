@@ -6,7 +6,6 @@ local map = vim.keymap.set
 map("v", "p", '"0p', { noremap = true })
 map("x", "q", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true, silent = true })
 map("x", "<leader>gl", ":Gllog<CR>", { noremap = true, silent = true })
-map("n", "<space>ge", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = true })
 map("n", "<space>db", "<cmd>DBUI<CR>", { noremap = true, silent = true })
 map("n", "gf", "<cmd>GoFillStruct<CR>", { noremap = true, silent = true })
 map("n", "g<S-r>", "<cmd>GoGenReturn<CR>", { noremap = true, silent = true })
