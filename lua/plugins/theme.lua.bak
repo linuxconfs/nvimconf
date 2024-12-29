@@ -1,7 +1,0 @@
-return {
-  "ray-x/starry.nvim",
-  setup = function()
-    -- see example setup below
-    vim.g.starry_italic_comments = true
-  end,
-}
