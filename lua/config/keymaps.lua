@@ -18,6 +18,10 @@ map("n", "gp", "`[v`]", { noremap = true, silent = true })
 map("n", "<leader>m", ":MaximizerToggle<CR>", { noremap = true, silent = true })
 map("n", "<leader>ss", ":SearchSession<CR>", { noremap = true, silent = true })
 map("n", "<leader>hs", 'q:i%g//lua vim.api.nvim_buf_add_highlight(0, 0, "Search", vim.fn.line(".")-1, 0, -1)<esc>0fgla')
+
+-- DBUI settings
+map("n", "<leader>X", ":normal vip<CR><PLUG>(DBUI_ExecuteQuery)")
+map("n", "<leader>W", "<PLUG>(DBUI_SaveQuery)")
 -- Snacks.toggle.zoom():map("<c-m>"):map("<leader>wm"):map("<leader>uZ")
 
 -- treesitter switch argument
