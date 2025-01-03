@@ -22,7 +22,7 @@ map("n", "<leader>hs", 'q:i%g//lua vim.api.nvim_buf_add_highlight(0, 0, "Search"
 -- DBUI settings
 map("n", "<leader>X", ":normal vip<CR><PLUG>(DBUI_ExecuteQuery)")
 map("n", "<leader>W", "<PLUG>(DBUI_SaveQuery)")
--- Snacks.toggle.zoom():map("<c-m>"):map("<leader>wm"):map("<leader>uZ")
+Snacks.toggle.zoom():map("<c-x>"):map("<leader>wm"):map("<leader>uZ")
 
 -- treesitter switch argument
 map("i", "<tab><tab>", "<ESC>:normal ]avia<c-g><CR>", { noremap = true, silent = true })
