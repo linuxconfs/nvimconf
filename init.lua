@@ -66,3 +66,5 @@ vim.api.nvim_exec(
 ]],
   false
 )
+
+vim.g.fugitive_gitlab_domains = { "https://git.17zjh.com" }
