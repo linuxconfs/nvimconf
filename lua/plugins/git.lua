@@ -10,4 +10,7 @@ return {
   {
     "tpope/vim-rhubarb",
   },
+  {
+    "shumphrey/fugitive-gitlab.vim",
+  },
 }
