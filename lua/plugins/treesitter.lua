@@ -7,7 +7,7 @@ return {
           enable = true,
           lookahead = true,
           keymaps = {
-            -- ["af"] = "@function.outer",
+            ["af"] = "@function.outercustome",
             -- ["aF"] = "@function.outercustome",
           },
         },

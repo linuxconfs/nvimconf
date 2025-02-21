@@ -9,7 +9,11 @@ return {
       { "<space>ge", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = true } },
     },
     config = function()
-      require("lspsaga").setup({})
+      require("lspsaga").setup({
+        ui = {
+          code_action = "",
+        },
+      })
     end,
   },
 }
