@@ -7,11 +7,22 @@ return {
     provider = "deepseek",
     auto_suggestions_provider = "deepseek",
     vendors = {
+      -- official:
+      -- deepseek = {
+      --   __inherited_from = "openai",
+      --   api_key_name = "DEEPSEEK_API_KEY",
+      --   endpoint = "https://api.deepseek.com/v1",
+      --   model = "deepseek-reasoner",
+      --   timeout = 20000, -- timeout in milliseconds
+      --   disable_tools = true,
+      -- },
       deepseek = {
         __inherited_from = "openai",
         api_key_name = "DEEPSEEK_API_KEY",
-        endpoint = "https://api.deepseek.com",
-        model = "deepseek-coder",
+        endpoint = "https://ark.cn-beijing.volces.com/api/v3",
+        model = "deepseek-r1-250120",
+        timeout = 20000, -- timeout in milliseconds
+        disable_tools = true,
       },
     },
   }, -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
