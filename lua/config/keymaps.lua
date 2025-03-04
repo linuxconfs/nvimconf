@@ -8,7 +8,7 @@ map("x", "q", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true, si
 map("x", "<leader>gl", ":Gllog<CR>", { noremap = true, silent = true })
 map("n", "<space>db", "<cmd>DBUI<CR>", { noremap = true, silent = true })
 map("n", "gf", "<cmd>GoFillStruct<CR>", { noremap = true, silent = true })
-map("n", "g<S-r>", "<cmd>GoGenReturn<CR>", { noremap = true, silent = true })
+map("n", "g<S-r>", "<cmd>GoRun<CR>", { noremap = true, silent = true })
 map("i", "<c-a>", "<c-o>^", { noremap = true })
 map("i", "<c-e>", "<c-o>$", { noremap = true })
 map("i", "<c-j>", "<c-o>o", { noremap = true })
