@@ -2,10 +2,11 @@
 -- Add any additional keymaps here
 local map = vim.keymap.set
 local opts = { noremap = true, unique = true, silent = true }
+local nonUnique = { noremap = true, silent = true }
 
 map("v", "p", '"0p', opts)
 map("x", "q", [[:<C-u>lua MiniSurround.add('visual')<CR>]], opts)
-map("x", "<leader>gl", ":Gllog<CR>", { noremap = true, silent = true })
+map("x", "<leader>gl", ":Gllog<CR>", nonUnique)
 map("n", "<space>db", "<cmd>DBUI<CR>", opts)
 map("n", "gf", "<cmd>GoFillStruct<CR>", opts)
 map("n", "g<S-r>", "<cmd>GoRun<CR>", opts)
@@ -17,11 +18,21 @@ map("i", "<c-e>", "<c-o>$", opts)
 map("i", "<c-j>", "<c-o>o", opts)
 -- map("n", "<leader>gb", ":Git blame<CR>", opts)
 -- map("n", "<leader>gl", ":Git log --graph --oneline<CR>", { noremap = true, silent = true })
-map("x", "<Leader>fc", "<cmd>FzfLua git_bcommits<CR>", opts)
 map("n", "gp", "`[v`]", opts)
 map("n", "<leader>m", ":MaximizerToggle<CR>", opts)
-map("n", "<leader>ss", ":SessionSearch<CR>", { noremap = true, silent = true })
+map("n", "<leader>ss", ":SessionSearch<CR>", nonUnique)
 map("n", "<leader>hs", 'q:i%g//lua vim.api.nvim_buf_add_highlight(0, 0, "Search", vim.fn.line(".")-1, 0, -1)<esc>0fgla')
+
+-- fzf lua
+map("x", "<Leader>fc", "<cmd>FzfLua git_bcommits<CR>", opts)
+map("n", "<Leader>ft", "<cmd>FzfLua treesitter<CR>", nonUnique)
+map("n", "<Leader>ff", function()
+  require("fzf-lua").treesitter({
+    fzf_opts = {
+      ["--query"] = "function | method",
+    },
+  })
+end, { noremap = true, silent = true, desc = "Find Functions" })
 
 -- DBUI settings
 map("n", "<leader>X", ":normal vip<CR><PLUG>(DBUI_ExecuteQuery)")
