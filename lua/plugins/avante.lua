@@ -5,6 +5,15 @@ return {
     lazy = false,
     version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
     opts = {
+      -- provider = "ollama",
+      -- auto_suggestions_provider = "ollama",
+      -- ollama = {
+      --   __inherited_from = "openai",
+      --   endpoint = "http://127.0.0.1:11434",
+      --   model = "qwen2.5-coder:7b",
+      --   max_tokens = 32768,
+      --   disable_tools = true,
+      -- },
       provider = "deepseek",
       auto_suggestions_provider = "deepseek",
       vendors = {
@@ -23,6 +32,8 @@ return {
           endpoint = "https://ark.cn-beijing.volces.com/api/v3",
           model = "deepseek-r1-250120",
           timeout = 20000, -- timeout in milliseconds
+          -- endpoint = "http://192.168.1.100:9990/v1",
+          -- model = "dllama_model_llama3_2_1b_instruct_q40.m",
           disable_tools = true,
         },
       },
