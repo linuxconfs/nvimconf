@@ -4,7 +4,9 @@ return {
     event = "VeryLazy",
     lazy = false,
     version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+    mode = "legacy", -- solve cannnot apply change issue?
     opts = {
+      -- -- ollama
       -- provider = "ollama",
       -- auto_suggestions_provider = "ollama",
       -- ollama = {
@@ -14,29 +16,31 @@ return {
       --   max_tokens = 32768,
       --   disable_tools = true,
       -- },
+      -- -- deepseek
       provider = "deepseek",
       auto_suggestions_provider = "deepseek",
       vendors = {
         -- official:
-        -- deepseek = {
-        --   __inherited_from = "openai",
-        --   api_key_name = "DEEPSEEK_API_KEY",
-        --   endpoint = "https://api.deepseek.com/v1",
-        --   model = "deepseek-reasoner",
-        --   timeout = 20000, -- timeout in milliseconds
-        --   disable_tools = true,
-        -- },
         deepseek = {
           __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_API_KEY",
-          endpoint = "https://ark.cn-beijing.volces.com/api/v3",
-          model = "deepseek-r1-250120",
+          api_key_name = "DEEPSEEK_API_KEY_OFFICIAL",
+          endpoint = "https://api.deepseek.com/v1",
+          model = "deepseek-chat",
           timeout = 20000, -- timeout in milliseconds
-          -- endpoint = "http://192.168.1.100:9990/v1",
-          -- model = "dllama_model_llama3_2_1b_instruct_q40.m",
           disable_tools = true,
         },
       },
+      --   deepseek = {
+      --     __inherited_from = "openai",
+      --     api_key_name = "DEEPSEEK_API_KEY",
+      --     endpoint = "https://ark.cn-beijing.volces.com/api/v3",
+      --     model = "deepseek-r1-250120",
+      --     timeout = 20000, -- timeout in milliseconds
+      --     -- endpoint = "http://192.168.1.100:9990/v1",
+      --     -- model = "dllama_model_llama3_2_1b_instruct_q40.m",
+      --     disable_tools = true,
+      --   },
+      -- },
     }, -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
     -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
