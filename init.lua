@@ -56,6 +56,10 @@ vim.cmd([[
 -- vim.o.tabstop = 4
 --  autocmd FileType * nmap s <Plug>(your-minisurround-mapping)
 
+-- python vim-floaterm-repl plugin
+vim.g.floaterm_repl_exit = { ["python"] = "exit()" }
+vim.g.floaterm_repl_clear = { ["python"] = "import os; os.system('clear')" }
+
 vim.api.nvim_exec(
   [[
   autocmd FileType php setlocal tabstop=2 shiftwidth=2 noexpandtab autoindent
