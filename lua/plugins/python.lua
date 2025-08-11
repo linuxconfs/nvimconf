@@ -422,30 +422,15 @@ return {
       local python_repl_definition = {
 
         -- PRN if need be, create a profile for configuring how ipython runs inside of iron.nvim (only if issues with config outside of nvim), --profile foo
-        command = { "ipython", "--no-autoindent" },
+        command = { "uv", "run", "ipython", "--no-autoindent" },
         -- command = { "python3" },
         -- FYI careful with bracketed_paste VS bracketed_paste_python!!!
         -- format = require("iron.fts.common").bracketed_paste, -- for ipython?
         -- format = require("iron.fts.common").bracketed_paste_python, -- for python3 not ipython, right?
         format = function(lines, extras)
-          -- TLDR:
-          --   I really like cell per line which effectively auto labels each print statement! with the full chunk of code
-          --     really this is one statement per cell (i.e. functions act as wrappers)
-          --     I do not really want to label my output manually every time
-          --     bracketed_paste => runs entire selection as one chunk (so isf => all of file in one go is impossible to discren WTF is WHAT)
-          --   ONLY nice to have would be to stop on the first failing line (cell)  when running multiple lines (cells)
-          --   IF I want batched lines (not interleaved):
-          --     I can use a function which is treated as one statement/line/cell
-          --   TBH, it did take a second to get used to the interleaved code and lines but now I really, really like it
-          -- result = require("iron.fts.common").bracketed_paste(lines, extras) -- everything selected is one cell (yuck)
           local result = require("iron.fts.common").bracketed_paste_python(lines, extras) -- *** defacto is cell per line (yes)
-
-          --  FYI I am unsure that bracketed_paste/bracketed_paste_python differences are intended so if they "fix" the way I like it, then I should add my own version
-
-          -- remove lines that only contain a comment
-          -- FYI I really like this with cell per line style! b/c it makes it more compact!!!
           local filtered = vim.tbl_filter(function(line)
-            return not string.match(line, "^%s*#")
+            return not string.match(line, "^%s*#") and not string.match(line, "^%s*```")
           end, result)
           return filtered
         end,
@@ -458,8 +443,8 @@ return {
         config = {
           scratch_repl = true, -- discard repls?
           repl_definition = {
-            fish = {
-              command = { "fish" },
+            zsh = {
+              command = { "zsh" },
               block_deviders = { "# %%" },
             },
             sh = bash_repl_definition,
@@ -472,9 +457,9 @@ return {
             python = python_repl_definition,
             ipynb = python_repl_definition,
             markdown = {
-              command = { "ipython", "--no-autoindent" },
+              command = python_repl_definition.command,
               format = python_repl_definition.format,
-              block_deviders = { "```python", "# %%", "#%%" },
+              block_deviders = { "```python\n```", "```python", "```" }, -- allow both, I have old files with no space and for now I can use both
             },
           },
           repl_filetype = function(bufnr, ft)
