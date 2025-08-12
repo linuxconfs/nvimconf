@@ -10,7 +10,7 @@
   "ctrlsf.vim": { "branch": "master", "commit": "50186c529c881b7844bcd66c7b8e9826eb8990a4" },
   "darcula-dark.nvim": { "branch": "main", "commit": "5e8edf8b2aff3bf3d5110799713d29649cb87bbb" },
   "dbext.vim": { "branch": "master", "commit": "14f3d530b6189dc3f97edfa70b7a36006e21148c" },
-  "diagram.nvim": { "branch": "master", "commit": "84fe677aa940605ef248f36c0ea23561690c95eb" },
+  "diagram.nvim": { "branch": "zhangdd/fix/scale-not-work", "commit": "84fe677aa940605ef248f36c0ea23561690c95eb" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "eyeliner.nvim": { "branch": "main", "commit": "8f197eb30cecdf4c2cc9988a5eecc6bc34c0c7d6" },
