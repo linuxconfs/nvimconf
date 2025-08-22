@@ -423,6 +423,7 @@ return {
 
         -- PRN if need be, create a profile for configuring how ipython runs inside of iron.nvim (only if issues with config outside of nvim), --profile foo
         command = { "uv", "run", "ipython", "--no-autoindent" },
+        -- command = { "uv", "run", "jupyter", "console" },
         -- command = { "python3" },
         -- FYI careful with bracketed_paste VS bracketed_paste_python!!!
         -- format = require("iron.fts.common").bracketed_paste, -- for ipython?

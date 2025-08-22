@@ -29,9 +29,9 @@ return {
     },
   },
   {
-    "zhangddjs/diagram.nvim",
+    "3rd/diagram.nvim",
     dependencies = {
-      "zhangddjs/image.nvim",
+      "3rd/image.nvim",
     },
     -- lazy = true, -- 设置为延迟加载
     opts = {
