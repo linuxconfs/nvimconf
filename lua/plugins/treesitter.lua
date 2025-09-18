@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "ninja", "rst", "go" },
+      ensure_installed = { "ninja", "rst", "go", "baml" },
       textobjects = {
         select = {
           enable = true,
