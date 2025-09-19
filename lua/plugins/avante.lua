@@ -19,8 +19,7 @@ return {
       -- -- deepseek
       provider = "deepseek",
       auto_suggestions_provider = "deepseek",
-      vendors = {
-        -- official:
+      providers = {
         deepseek = {
           __inherited_from = "openai",
           api_key_name = "DEEPSEEK_API_KEY_OFFICIAL",
