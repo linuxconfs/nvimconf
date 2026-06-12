@@ -17,6 +17,18 @@ require("mini.files").setup()
 -- vim.o.termguicolors = true
 vim.cmd.colorscheme("darcula-dark")
 -- vim.cmd.colorscheme("base16-tender")
+vim.g.autoformat = true
+
+-- neovim server location, used for skim callback
+-- vim.fn.serverstart("/tmp/nvim.sock")
+
+-- Disable autoformat for Python files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
 
 local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 -- vim.api.nvim_create_autocmd("BufWritePre", {

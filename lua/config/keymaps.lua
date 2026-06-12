@@ -55,3 +55,10 @@ keymaps.register("n", {
   ["<C-k>"] = [[<cmd>lua require('tmux').move_top()<cr>]],
   ["<C-l>"] = [[<cmd>lua require('tmux').move_right()<cr>]],
 })
+
+-- abolish
+-- crc : to camel
+-- crs : to snake
+-- crm : to mixed
+-- cr- : to dashed
+-- cr. : to dot

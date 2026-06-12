@@ -2,9 +2,10 @@ return {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
+    enabled = false,
     lazy = false,
     version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
-    mode = "legacy", -- solve cannnot apply change issue?
+    mode = "agentic", -- solve cannnot apply change issue?
     opts = {
       -- -- ollama
       -- provider = "ollama",
@@ -17,18 +18,18 @@ return {
       --   disable_tools = true,
       -- },
       -- -- deepseek
-      provider = "deepseek",
-      auto_suggestions_provider = "deepseek",
-      providers = {
-        deepseek = {
-          __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_API_KEY_OFFICIAL",
-          endpoint = "https://api.deepseek.com/v1",
-          model = "deepseek-chat",
-          timeout = 20000, -- timeout in milliseconds
-          disable_tools = true,
-        },
-      },
+      -- provider = "deepseek",
+      -- auto_suggestions_provider = "deepseek",
+      -- providers = {
+      --   deepseek = {
+      --     __inherited_from = "openai",
+      --     api_key_name = "DEEPSEEK_API_KEY_OFFICIAL",
+      --     endpoint = "https://api.deepseek.com/v1",
+      --     model = "deepseek-chat",
+      --     timeout = 20000, -- timeout in milliseconds
+      --     disable_tools = true,
+      --   },
+      -- },
       --   deepseek = {
       --     __inherited_from = "openai",
       --     api_key_name = "DEEPSEEK_API_KEY",
@@ -40,6 +41,18 @@ return {
       --     disable_tools = true,
       --   },
       -- },
+      provider = "claude",
+      providers = {
+        claude = {
+          endpoint = "https://api.anthropic.com",
+          model = "claude-sonnet-4-5-20250929",
+          timeout = 30000, -- Timeout in milliseconds
+          extra_request_body = {
+            temperature = 0.75,
+            max_tokens = 20480,
+          },
+        },
+      },
     }, -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
     -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
